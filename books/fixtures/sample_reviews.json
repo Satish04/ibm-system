@@ -1,0 +1,98 @@
+[
+  {
+    "model": "books.review",
+    "pk": 1,
+    "fields": {
+      "book": 1,
+      "user": 1,
+      "rating": 5,
+      "comment": "A masterpiece of American literature. The prose is beautiful and the story is timeless.",
+      "created_at": "2025-03-24T10:00:00Z",
+      "updated_at": "2025-03-24T10:00:00Z"
+    }
+  },
+  {
+    "model": "books.review",
+    "pk": 2,
+    "fields": {
+      "book": 2,
+      "user": 1,
+      "rating": 5,
+      "comment": "Essential reading for any software developer. The principles in this book have greatly improved my code quality.",
+      "created_at": "2025-03-24T10:00:00Z",
+      "updated_at": "2025-03-24T10:00:00Z"
+    }
+  },
+  {
+    "model": "books.review",
+    "pk": 3,
+    "fields": {
+      "book": 3,
+      "user": 1,
+      "rating": 5,
+      "comment": "An epic science fiction masterpiece. The world-building is incredible and the story is captivating.",
+      "created_at": "2025-03-24T10:00:00Z",
+      "updated_at": "2025-03-24T10:00:00Z"
+    }
+  },
+  {
+    "model": "books.review",
+    "pk": 4,
+    "fields": {
+      "book": 4,
+      "user": 1,
+      "rating": 5,
+      "comment": "Packed with practical advice and timeless wisdom. A must-read for any serious programmer.",
+      "created_at": "2025-03-24T10:00:00Z",
+      "updated_at": "2025-03-24T10:00:00Z"
+    }
+  },
+  {
+    "model": "books.review",
+    "pk": 5,
+    "fields": {
+      "book": 5,
+      "user": 1,
+      "rating": 5,
+      "comment": "A chilling and prophetic novel that becomes more relevant with each passing year.",
+      "created_at": "2025-03-24T10:00:00Z",
+      "updated_at": "2025-03-24T10:00:00Z"
+    }
+  },
+  {
+    "model": "books.review",
+    "pk": 6,
+    "fields": {
+      "book": 1,
+      "user": 2,
+      "rating": 4,
+      "comment": "A classic that perfectly captures the Jazz Age. The characters are unforgettable.",
+      "created_at": "2025-03-24T10:00:00Z",
+      "updated_at": "2025-03-24T10:00:00Z"
+    }
+  },
+  {
+    "model": "books.review",
+    "pk": 7,
+    "fields": {
+      "book": 2,
+      "user": 2,
+      "rating": 4,
+      "comment": "Great principles for writing maintainable code. Some examples are a bit dated but still valuable.",
+      "created_at": "2025-03-24T10:00:00Z",
+      "updated_at": "2025-03-24T10:00:00Z"
+    }
+  },
+  {
+    "model": "books.review",
+    "pk": 8,
+    "fields": {
+      "book": 3,
+      "user": 2,
+      "rating": 5,
+      "comment": "The depth of the political and religious themes is amazing. A true sci-fi classic.",
+      "created_at": "2025-03-24T10:00:00Z",
+      "updated_at": "2025-03-24T10:00:00Z"
+    }
+  }
+]

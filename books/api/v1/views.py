@@ -75,7 +75,7 @@ class BookViewSet(BaseBookViewSet):
         """Add a new review to the book."""
         book = self.get_object()
         review_data = request.data.copy()
-        review_data['book_id'] = book.id
+        review_data['book'] = book.id
         serializer = ReviewSerializer(data=review_data, context={'request': request})
         if serializer.is_valid():
             serializer.save()

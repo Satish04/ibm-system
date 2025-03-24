@@ -22,15 +22,12 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     path('books/', include("books.urls"))
 ]
 
 if settings.DEBUG:
-    urlpatterns += [
-        path("schema", SpectacularAPIView.as_view(), name="schema"),
-        path("", SpectacularSwaggerView.as_view(
-            url_name="schema"), name="swagger-ui"),
-    ]
     urlpatterns += static(settings.STATIC_URL,
                           document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL,

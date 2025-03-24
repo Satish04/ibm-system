@@ -1,0 +1,62 @@
+[
+  {
+    "model": "books.book",
+    "pk": 1,
+    "fields": {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "description": "A story of decadence and excess, The Great Gatsby portrays the lives of wealthy New Yorkers during the Roaring Twenties.",
+      "rating": 4.5,
+      "created_at": "2025-03-24T10:00:00Z",
+      "updated_at": "2025-03-24T10:00:00Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 2,
+    "fields": {
+      "title": "Clean Code",
+      "author": "Robert C. Martin",
+      "description": "A handbook of agile software craftsmanship that helps programmers write better code.",
+      "rating": 4.8,
+      "created_at": "2025-03-24T10:00:00Z",
+      "updated_at": "2025-03-24T10:00:00Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 3,
+    "fields": {
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "description": "Set in the distant future amidst a feudal interstellar society, Dune tells the story of young Paul Atreides.",
+      "rating": 4.7,
+      "created_at": "2025-03-24T10:00:00Z",
+      "updated_at": "2025-03-24T10:00:00Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 4,
+    "fields": {
+      "title": "The Pragmatic Programmer",
+      "author": "Andrew Hunt, David Thomas",
+      "description": "A guide to software development that covers both the high-level design and the day-to-day programming.",
+      "rating": 4.9,
+      "created_at": "2025-03-24T10:00:00Z",
+      "updated_at": "2025-03-24T10:00:00Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 5,
+    "fields": {
+      "title": "1984",
+      "author": "George Orwell",
+      "description": "A dystopian novel set in a totalitarian society, exploring themes of surveillance and control.",
+      "rating": 4.6,
+      "created_at": "2025-03-24T10:00:00Z",
+      "updated_at": "2025-03-24T10:00:00Z"
+    }
+  }
+]
