@@ -8,9 +8,9 @@ def generate_summary(text):
     """Generate a summary using Ollama API."""
     try:
         # First, check if Ollama service is available
-        health_check = requests.get(f"{OLLAMA_API_URL}/api/generate", timeout=10)
-        health_check.raise_for_status()
-        logger.info("Ollama service is healthy")
+        health_check = requests.get(f"{OLLAMA_API_URL}/api/tags", timeout=10)
+        if health_check.status_code == 200:
+            logger.info("Ollama service is healthy")
 
         # Generate summary using Ollama
         response = requests.post(
