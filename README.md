@@ -64,13 +64,14 @@ A sophisticated Django-based REST API service for managing books and reviews, fe
 
 4. **Create Admin User**
    ```bash
-   docker exec -it book_management_app python manage.py createsuperuser
+   docker exec -it book_management_app bash 
+   ./manage.py createsuperuser
    ```
 
 5. **Access the Application**
-   - API Documentation: http://localhost:8000/api/docs/
-   - Admin Interface: http://localhost:8000/admin/
-   - API Base URL: http://localhost:8000/books/api/v1/
+   - API Documentation: http://0.0.0.0:8000/api/docs/
+   - Admin Interface: http://0.0.0.0:8000/admin/
+   - API Base URL: http://0.0.0.0:8000/books/api/v1/
 
 ## 📚 API Documentation
 
@@ -99,7 +100,8 @@ A sophisticated Django-based REST API service for managing books and reviews, fe
 
 ### Running Tests
 ```bash
-docker exec -it book_management_app python manage.py test
+docker exec -it book_management_app bash 
+./manage.py test
 ```
 
 ### Test Coverage
@@ -171,35 +173,40 @@ The project includes sample data to help you get started quickly:
 1. **Load Fixtures**
    ```bash
    # Load sample books
-   docker exec -it book_management_app python manage.py loaddata books/fixtures/sample_books.json
+   docker exec -it book_management_app bash 
+   ./manage.py loaddata books/fixtures/sample_books.json
    
    # Load sample reviews
-   docker exec -it book_management_app python manage.py loaddata books/fixtures/sample_reviews.json
+   docker exec -it book_management_app bash 
+   ./manage.py loaddata books/fixtures/sample_reviews.json
    ```
 
 2. **Sample Admin User**
    ```bash
-   docker exec -it book_management_app python manage.py shell -c "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'admin123')"
+   docker exec -it book_management_app bash 
+   ./manage.py shell
+   from django.contrib.auth.models import User 
+   User.objects.create_superuser('admin', 'admin@example.com', 'admin123')"
    ```
 
 ### Sample API Requests
 
 1. **Get JWT Token**
    ```bash
-   curl -X POST http://localhost:8000/api/v1/token/ \
+   curl -X POST http://0.0.0.0:8000/api/v1/token/ \
         -H "Content-Type: application/json" \
         -d '{"username": "admin", "password": "admin123"}'
    ```
 
 2. **List Books**
    ```bash
-   curl -X GET http://localhost:8000/books/api/v1/books/ \
+   curl -X GET http://0.0.0.0:8000/books/api/v1/books/ \
         -H "Authorization: Bearer <your_token>"
    ```
 
 3. **Add a Book**
    ```bash
-   curl -X POST http://localhost:8000/books/api/v1/books/ \
+   curl -X POST http://0.0.0.0:8000/books/api/v1/books/ \
         -H "Authorization: Bearer <your_token>" \
         -H "Content-Type: application/json" \
         -d '{
@@ -211,13 +218,13 @@ The project includes sample data to help you get started quickly:
 
 4. **Generate Summary**
    ```bash
-   curl -X POST http://localhost:8000/books/api/v1/books/1/generate_summary/ \
+   curl -X POST http://0.0.0.0:8000/books/api/v1/books/1/generate_summary/ \
         -H "Authorization: Bearer <your_token>"
    ```
 
 5. **Add Review**
    ```bash
-   curl -X POST http://localhost:8000/books/api/v1/books/1/add_review/ \
+   curl -X POST http://0.0.0.0:8000/books/api/v1/books/1/add_review/ \
         -H "Authorization: Bearer <your_token>" \
         -H "Content-Type: application/json" \
         -d '{
