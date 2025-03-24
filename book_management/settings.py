@@ -156,7 +156,7 @@ REST_FRAMEWORK = {
 
 # Swagger settings
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Intellogent Book Management API',
+    'TITLE': 'Intelligent Book Management API',
     'DESCRIPTION': 'A Django-based REST API service for managing books and reviews',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
