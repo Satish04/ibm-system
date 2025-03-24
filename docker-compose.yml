@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    restart: always
+    container_name: book_management_app
+    image: book_management_app
+    command: bash -c "/app/runserver.sh"
+    volumes:
+      - ./:/app
+      - static_root:/app/static_root:rw
+      - media_root:/app/media_root:rw
+    depends_on:
+      - db
+      - ollama
+    ports:
+      - "8000:8000"
+
+
+  nginx:
+    networks:
+      - default
+    build: ./docker/nginx
+    image: book_management_nginx
+    container_name: book_management_nginx
+    hostname: nginx-docker-s-management
+    volumes:
+      - static_root:/app/static_root
+      - media_root:/app/media_root
+      - /var/log/nginx/:/var/log/nginx/
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+
+  db:
+    image: postgres:latest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env
+    restart: always
+    ports:
+      - "5451:5432"
+    container_name: book_management_db
+
+  ollama:
+    image: ollama/ollama:0.1.29
+    container_name: ollama_server
+    restart: always
+    volumes:
+      - ollama_models:/root/.ollama
+    ports:
+      - "11434:11434"
+
+
+volumes:
+  postgres_data:
+  static_root:  # Define static volume
+  media_root:   # Define media volume
+  ollama_models:  # Persist Ollama models
+
+
+networks:
+  default:
+    driver: bridge
+    name: book_management_network

@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  app:
+    networks:
+      - default
+    stdin_open: true
+    tty: true
+    depends_on:
+      - db
+    container_name: book_management_app
+    image: book_management_app
+
+  nginx:
+    networks:
+      - default
+    ports:
+      - "8001:80"
+    container_name: book_management_nginx
+    image: book_management_nginx
+
+  db:
+    networks:
+      - default
+    image: postgres:latest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env
+    restart: always
+    ports:
+      - "5432:5432"
+    container_name: book_management_db
+
+
+
+volumes:
+  postgres_data:
+
+networks:
+  default:
+      name: book_management_local_network
+      driver: bridge

@@ -1,0 +1,67 @@
+[
+    {
+        "model": "books.book",
+        "pk": 1,
+        "fields": {
+            "title": "The Great Gatsby",
+            "author": "F. Scott Fitzgerald",
+            "description": "Set in the Jazz Age on Long Island, the novel depicts narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby and Gatsby's obsession to reunite with his former lover, Daisy Buchanan.",
+            "summary": "A story of decadence and excess, Gatsby explores the American Dream and its corruption through the lens of love, wealth, and social status in the 1920s.",
+            "rating": 4.5,
+            "created_at": "2025-03-19T03:36:00+05:30",
+            "updated_at": "2025-03-19T03:36:00+05:30"
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 2,
+        "fields": {
+            "title": "1984",
+            "author": "George Orwell",
+            "description": "In a totalitarian future society, a man, whose daily work is perpetuating propaganda and historical revisionism, rebels against the government by falling in love and keeping a diary of his forbidden thoughts.",
+            "summary": "A dystopian social science fiction novel that explores surveillance, truth manipulation, and totalitarian control.",
+            "rating": 4.8,
+            "created_at": "2025-03-19T03:36:00+05:30",
+            "updated_at": "2025-03-19T03:36:00+05:30"
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 3,
+        "fields": {
+            "title": "Pride and Prejudice",
+            "author": "Jane Austen",
+            "description": "The story follows the main character Elizabeth Bennet as she deals with issues of manners, upbringing, morality, education, and marriage in the society of the landed gentry of early 19th-century England.",
+            "summary": "A romantic novel exploring themes of love, marriage, social status, and personal growth in Regency-era England.",
+            "rating": 4.7,
+            "created_at": "2025-03-19T03:36:00+05:30",
+            "updated_at": "2025-03-19T03:36:00+05:30"
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 4,
+        "fields": {
+            "title": "To Kill a Mockingbird",
+            "author": "Harper Lee",
+            "description": "The story of racial injustice and the loss of innocence in the American South, told through the eyes of Jean Louise 'Scout' Finch.",
+            "summary": "A powerful examination of racism, justice, and moral growth in the American South during the Great Depression.",
+            "rating": 4.9,
+            "created_at": "2025-03-19T03:36:00+05:30",
+            "updated_at": "2025-03-19T03:36:00+05:30"
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 5,
+        "fields": {
+            "title": "The Hobbit",
+            "author": "J.R.R. Tolkien",
+            "description": "Bilbo Baggins, a hobbit, embarks on a quest to help a group of dwarves reclaim their mountain home from a fearsome dragon.",
+            "summary": "A fantasy adventure novel that follows the journey of a hobbit who discovers courage, friendship, and his own potential.",
+            "rating": 4.6,
+            "created_at": "2025-03-19T03:36:00+05:30",
+            "updated_at": "2025-03-19T03:36:00+05:30"
+        }
+    }
+]
