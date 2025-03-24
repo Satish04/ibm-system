@@ -95,9 +95,9 @@ A sophisticated Django-based REST API service for managing books and reviews, fe
 - `PUT /api/v1/reviews/{id}/` - Update review
 - `DELETE /api/v1/reviews/{id}/` - Delete review
 
-## 🧪 Testing
+## 🧪 Testing & Development
 
-Run the test suite:
+### Running Tests
 ```bash
 docker exec -it book_management_app python manage.py test
 ```
@@ -110,32 +110,21 @@ docker exec -it book_management_app python manage.py test
 - Error handling
 - Database operations
 
-## 🔒 Security Features
+## 🤖 AI Summary Generation
 
-- JWT authentication for API security
-- PostgreSQL password protection
-- Environment variables for sensitive data
-- Input validation and sanitization
-- Error logging for security monitoring
-- CSRF protection enabled
+The system uses Ollama with the Mistral model to generate summaries for books. The summary generation is triggered through the `/api/v1/books/{id}/generate_summary/` endpoint.
 
-## 🏗️ Project Structure
+### How it works:
+1. When a POST request is made to the generate_summary endpoint:
+   - The system performs a health check on the Ollama service
+   - If the service is healthy, it sends the book's description to Ollama
+   - Ollama processes the text using the Mistral model
+   - The generated summary is returned in the response
 
-```
-book_management/
-├── books/                    # Main application
-│   ├── api/                 # API implementation
-│   │   └── v1/             # API version 1
-│   │       ├── views.py    # API endpoints
-│   │       ├── urls.py     # URL routing
-│   │       ├── utils.py    # Utilities
-│   │       └── serializers.py # Data serialization
-│   ├── models.py           # Database models
-│   └── tests/              # Test suite
-├── book_management/         # Project settings
-├── docker/                 # Docker configuration
-└── requirements.txt        # Python dependencies
-```
+### Error Handling:
+- Connection errors: Returns a message if Ollama service is unavailable
+- Timeout errors: Returns a message if the request takes too long (timeout: 120s)
+- General errors: Returns detailed error messages for debugging
 
 ## 📊 Database Schema
 
@@ -173,24 +162,6 @@ class Review(models.Model):
   - Review rating: 1-5 integer
 - Automatic timestamps for creation and updates
 - Nullable summary field for AI-generated content
-
-## 🔄 Development Workflow
-
-1. **Database Migrations**
-   ```bash
-   docker exec -it book_management_app python manage.py makemigrations
-   docker exec -it book_management_app python manage.py migrate
-   ```
-
-2. **Code Quality**
-   ```bash
-   docker exec -it book_management_app pylint books
-   ```
-
-3. **Testing Changes**
-   ```bash
-   docker exec -it book_management_app python manage.py test books.tests
-   ```
 
 ## 📚 Sample Data & Fixtures
 
@@ -255,52 +226,14 @@ The project includes sample data to help you get started quickly:
         }'
    ```
 
-### Sample Data Contents
+## 🔒 Security Features
 
-1. **Books Include**:
-   - Classic literature
-   - Modern bestsellers
-   - Technical books
-   - Various genres and ratings
-
-2. **Reviews Include**:
-   - Different rating levels
-   - Detailed comments
-   - Multiple users' perspectives
-
-3. **Try Different Features**:
-   - Book recommendations
-   - Rating aggregation
-   - AI summary generation
-   - Review management
-   - Search and filtering
-
-### Creating Your Own Fixtures
-
-1. **Export Current Data**
-   ```bash
-   docker exec -it book_management_app python manage.py dumpdata books.Book --indent 2 > books/fixtures/my_books.json
-   docker exec -it book_management_app python manage.py dumpdata books.Review --indent 2 > books/fixtures/my_reviews.json
-   ```
-
-2. **Create Custom Data**
-   ```json
-   // books/fixtures/custom_books.json
-   [
-     {
-       "model": "books.book",
-       "pk": 1,
-       "fields": {
-         "title": "Custom Book",
-         "author": "Your Name",
-         "description": "Your description",
-         "rating": 4.5,
-         "created_at": "2025-03-24T10:00:00Z",
-         "updated_at": "2025-03-24T10:00:00Z"
-       }
-     }
-   ]
-   ```
+- JWT authentication for API security
+- PostgreSQL password protection
+- Environment variables for sensitive data
+- Input validation and sanitization
+- Error logging for security monitoring
+- CSRF protection enabled
 
 ## 🤝 Contributing
 
