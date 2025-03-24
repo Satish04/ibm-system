@@ -136,6 +136,8 @@ class Book(models.Model):
     id = models.BigAutoField(primary_key=True)
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255)
+    author = models.CharField(max_length=255)
+    genre = models.CharField(max_length=100, null=True, blank=True)
     description = models.TextField()
     rating = models.FloatField(default=0)
     summary = models.TextField(null=True, blank=True)
