@@ -1,4 +1,4 @@
-# Book Management System
+# Intelligent Book Management System
 
 A Django-based REST API service for managing books and reviews, featuring AI-powered book summary generation using Ollama.
 
@@ -98,11 +98,11 @@ cd book_management
 
 2. Create a `.env` file in the project root:
 ```env
-POSTGRES_DB=book_management
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
-POSTGRES_HOST=db
-POSTGRES_PORT=5432
+POSTGRES_DB=<book_management>
+POSTGRES_USER=<postgres>
+POSTGRES_PASSWORD=<postgres>
+POSTGRES_HOST=<db>
+POSTGRES_PORT=<5432>
 ```
 
 3. Build and start the containers:
